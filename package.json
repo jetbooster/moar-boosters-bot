@@ -1,12 +1,17 @@
 {
   "name": "moar-boosters-bot",
   "version": "1.0.0",
-  "description":
-    "Shitposting Reddit bot for replying to comments on /r/KerbalSpaceProgram containing \"more boosters\"",
+  "description": "Shitposting Reddit bot for replying to comments on /r/KerbalSpaceProgram containing \"more boosters\"",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node src/index.js",
-    "test": "babel-node test/test.spec.js"
+    "start": "node build/index.js",
+    "start-dev": "babel-node src/index.js",
+    "test": "babel-node test/test.spec.js",
+    "build-bot": "babel -d ./build ./src -s --copy-files",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && npm run build-bot",
+    "start-daemon": "npm run build && forever start -l logs/forever.log -o out.log -e err.log build/index.js",
+    "stop-daemon": "forever stop build/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +33,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
+    "forever": "^0.15.3",
     "prettier": "^1.11.1",
     "snoostorm": "0.0.5",
     "snoowrap": "^1.15.2"
