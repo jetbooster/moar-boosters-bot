@@ -4,7 +4,7 @@ Shitposting Reddit bot for replying to comments on /r/KerbalSpaceProgram contain
 
 The bot is ratelimited to once every 5 minutes. Hopefully this is sufficient to appease the mods, but let me know if not.
 
-Bot is currently summoned
+Bot is currently summoned with the phrases 'more boosters!' or 'moar boosters'. Capitalisation is ignored.
 
 ### TODO:
 
