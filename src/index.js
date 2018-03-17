@@ -17,7 +17,7 @@ const r = new Snoowrap({
 
 const client = new Snoostorm(r);
 const comments = client.CommentStream({
-  subreddit: "testingground4bots",
+  subreddit: process.env.SUBREDDIT,
   results: 3
 });
 
