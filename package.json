@@ -6,8 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node src/index.js",
-    "test": "babel-node test/test.spec.js",
-    "fileTest": "babel-node src/handlers/fileHandler"
+    "test": "babel-node test/test.spec.js"
   },
   "repository": {
     "type": "git",

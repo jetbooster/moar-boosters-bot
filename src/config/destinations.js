@@ -1,3 +1,5 @@
+// deltaV values courtesy of Kowgan, https://forum.kerbalspaceprogram.com/index.php?/topic/87463-13-community-delta-v-map-26-sep-29th/
+
 export default [
   //Kerbin system
   { dV: 3400, name: "Low Kerbin Orbit" },
