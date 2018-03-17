@@ -1,0 +1,36 @@
+{
+  "name": "moar-boosters-bot",
+  "version": "1.0.0",
+  "description":
+    "Shitposting Reddit bot for replying to comments on /r/KerbalSpaceProgram containing \"more boosters\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "test": "babel-node test/test.spec.js",
+    "fileTest": "babel-node src/handlers/fileHandler"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jetbooster/moar-boosters-bot.git"
+  },
+  "author": "jetbooster",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jetbooster/moar-boosters-bot/issues"
+  },
+  "homepage": "https://github.com/jetbooster/moar-boosters-bot#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "prettier": "^1.11.1",
+    "snoostorm": "0.0.5",
+    "snoowrap": "^1.15.2"
+  }
+}
