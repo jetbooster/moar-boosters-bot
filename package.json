@@ -10,7 +10,7 @@
     "build-bot": "babel -d ./build ./src -s --copy-files",
     "clean": "rm -rf build && mkdir build",
     "build": "npm run clean && npm run build-bot",
-    "start-daemon": "npm run build && forever start -l logs/forever.log -o out.log -e err.log build/index.js",
+    "start-daemon": "npm run build && forever start -l logs/forever.log -o logs/out.log -e logs/err.log build/index.js",
     "stop-daemon": "forever stop build/index.js"
   },
   "repository": {
