@@ -28,17 +28,19 @@ let numBoosters = 0;
 
 const reply = (comment, data) => {
   const dV = dvCalc.calcDvRecursive(data.numBoosters, 0);
+  const destinations = destinationHandler.bestDestinations(dV);
   comment.reply(
     `More Boosters!\n\nThe /r/KerbalSpaceProgram community rocket now has ${
       data.numBoosters
-    } boosters attached and weighs ${dvCalc.vesselMass(data.numBoosters)} tonnes.\n\nCurrent dV:${dV.toFixed(0)}
-
-    ${destinationHandler.bestDestinations(dV)}`
+    } boosters attached and weighs ${dvCalc.vesselMass(data.numBoosters)} tonnes.\n\nCurrent dV:${dV.toFixed(0)}\n\n${
+      destinations.prevString
+    }  \n${
+      destinations.nextString
+    }\n\n***\n^(If this bot is causing issues, please contact /u/jetbooster.) ^[Github](https://github.com/jetbooster/moar-boosters-bot)`
   );
 };
 
 comments.on("comment", comment => {
-  console.log(comment.author.name);
   if (comment.author.name === "Moar_boosters_bot") {
     // Don't reply to yourself. You're not /u/rooster_86.
     // Also as it is currently set up, this would cause recursive replies. nope.
@@ -61,7 +63,7 @@ comments.on("comment", comment => {
     const index = comment.body.toLowerCase().indexOf(phrase);
     if (index !== -1) {
       // TRIGGERED
-      console.log("triggered");
+      console.log(`Detected comment from ${comment.author.name} containing trigger phrase`);
       fileHandler
         .getRunningTotals()
         .then(data => {

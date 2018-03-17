@@ -2,6 +2,8 @@
 
 Shitposting Reddit bot for replying to comments on /r/KerbalSpaceProgram containing "more boosters"
 
+The bot is ratelimited to once every 5 minutes. Hopefully this is sufficient to appease the mods, but let me know if not.
+
 ### TODO:
 
 * Make Destinations list generated rather than hardcoded
